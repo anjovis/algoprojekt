@@ -27,6 +27,7 @@ public class Plagiat {
 		
 		
 		//heeeeej test på det
+		//okej bajs
 	}
 
 }
