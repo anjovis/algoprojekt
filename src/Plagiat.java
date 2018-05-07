@@ -23,6 +23,9 @@ public class Plagiat {
 		catch(IOException e) {
 			e.printStackTrace();
 		}
+		
+		
+		//heeeeej test på det
 	}
 
 }
