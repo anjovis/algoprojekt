@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Plagiat {
+public class Plagiat {hejmoa
 
 
 	public static Hash readFile(String filnamn) {
@@ -20,46 +20,15 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				hfil.add(ord,hashCode(ord));
+				hfil.add(ord,Hash.hashCode(ord));
 			}
 
-<<<<<<< Updated upstream
-=======
-			
-<<<<<<< Updated upstream
->>>>>>> master
-=======
-<<<<<<< Updated upstream
-=======
-			
-			//blablablbalablablablbalbalbalabl
-			
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 		}
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
-<<<<<<< Updated upstream
 
-=======
-<<<<<<< Updated upstream
-		
-<<<<<<< HEAD
-=======
-		
-<<<<<<< Updated upstream
->>>>>>> master
-=======
-=======
-		//kuljul
-		//heeeeej test på det
-		//okej bajs
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 	}
 	
 	
