@@ -5,6 +5,7 @@ import java.io.IOException;
 public class Plagiat {
 	
 	
+	
 	public static void main (String [] args) {
 		
 		BufferedReader br = null;
@@ -17,17 +18,15 @@ public class Plagiat {
 			
 			fr = new FileReader(filnamn1);
 			br = new BufferedReader(fr);
+
 			
-			
-			//blablablbalablablablbalbalbalabl
 		}
 		catch(IOException e) {
 			e.printStackTrace();
 		}
 		
 		
-		//heeeeej test på det
-		//okej bajs
+		
 	}
 
 }
