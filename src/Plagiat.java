@@ -20,7 +20,7 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				hfil.add(ord,hashCode(ord));
+				hfil.add(ord,Hash.hashCode(ord));
 			}
 
 		}
@@ -29,6 +29,13 @@ public class Plagiat {
 		}
 		
 
+	}
+	
+	public static double compareFile(Hash fil1, Hash fil2) {
+		
+		if(fil1.)
+		
+		
 	}
 	
 	
