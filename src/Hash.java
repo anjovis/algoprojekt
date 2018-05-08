@@ -1,12 +1,7 @@
 
 public class Hash {
-	
-<<<<<<< HEAD
-	private static String[] hashArray;
-	
-	public Hash() {
-		hashArray =  new String[199999];
-=======
+
+
 	private String[] hashArray;
 	private String key;
     private int value;
@@ -14,8 +9,7 @@ public class Hash {
 	
 	public Hash() {
 		hashArray =  new String[10];
-		
->>>>>>> master
+
 	}
 	
 	public static int hashCode(String o) {
