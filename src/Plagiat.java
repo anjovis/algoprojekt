@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Plagiat {hejmoa
+public class Plagiat {
 
 
 	public static Hash readFile(String filnamn) {
@@ -29,6 +29,13 @@ public class Plagiat {hejmoa
 		}
 		
 
+	}
+	
+	public static double compareFile(Hash fil1, Hash fil2) {
+		
+		if(fil1.)
+		
+		
 	}
 	
 	
