@@ -1,33 +1,48 @@
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Plagiat {
 	
-	
-	public static void main (String [] args) {
+
+	public static Hash readFile(String filnamn) {
 		
-		BufferedReader br = null;
-		FileReader fr = null;
+		File fil = new File(filnamn);
+		Hash hfil = new Hash();
 		
 		try {
 			
-			String filnamn1 = "";
-			String filnamn2 = "";
+			Scanner sc = new Scanner(fil);
 			
-			fr = new FileReader(filnamn1);
-			br = new BufferedReader(fr);
-			
-			
-			//blablablbalablablablbalbalbalabl
+			while(sc.hasNext()) {
+				String ord = sc.next();
+				hfil.add(ord,hashCode(ord));
+			}
+	
 		}
-		catch(IOException e) {
+		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
 		
-		//heeeeej test på det
-		//okej bajs
 	}
+	
+	
+	public static void main (String [] args) {
+		
+		
+		
+		Scanner scan=new Scanner( System.in);
+		System.out.println("Ange filens namn");
+		String fileName=scan.next();
+		scan.close();
+		readFile(fileName);
+		
+	}
+	
+	
 
 }
