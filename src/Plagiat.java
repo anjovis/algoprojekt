@@ -23,12 +23,43 @@ public class Plagiat {
 				hfil.add(ord,hashCode(ord));
 			}
 
+<<<<<<< Updated upstream
+=======
+			
+<<<<<<< Updated upstream
+>>>>>>> master
+=======
+<<<<<<< Updated upstream
+=======
+			
+			//blablablbalablablablbalbalbalabl
+			
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 		}
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< Updated upstream
+		
+<<<<<<< HEAD
+=======
+		
+<<<<<<< Updated upstream
+>>>>>>> master
+=======
+=======
+		//kuljul
+		//heeeeej test på det
+		//okej bajs
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	}
 	
 	

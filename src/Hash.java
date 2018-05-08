@@ -14,6 +14,9 @@ public class Hash {
 		return 4;
 		
 	}
+	public void add(String word, int number){
+		
+	}
 	
 
 }
