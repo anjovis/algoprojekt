@@ -20,11 +20,16 @@ public class Hash {
 		
 	}
 	
+<<<<<<< Updated upstream
 	public static void main(String[] args) {
 		Hash hej = new Hash();
 		
 		System.out.println(hashC("hej"));
 		System.out.println(hashC("0"));
+=======
+	public int hashC(String o) {
+		
+>>>>>>> Stashed changes
 		
 		
 		
