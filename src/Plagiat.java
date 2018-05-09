@@ -33,8 +33,21 @@ public class Plagiat {
 	
 	public static double compareFile(Hash fil1, Hash fil2) {
 		
-		if(fil1.)
+		int f1 = fil1.size();
+		int f2 = fil2.size();
+		int l = 0;
 		
+		if(f1 < f2) {
+			l = f1;
+		}
+		else {
+			l = f2;
+		}
+		for(int i=0; i<l; i++) {
+			
+			
+			
+		}
 		
 	}
 	

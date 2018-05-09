@@ -1,3 +1,4 @@
+import java.util.Iterator;
 
 public class Hash {
 
@@ -23,6 +24,16 @@ public class Hash {
 			
 		}
 
+	}
+	
+	public String getWord(int i){
+		String it = hashArray[i];
+		return it;
+	}
+	
+	public int getIndex(int i){
+		int it = hashArrInt[i];
+		return it;
 	}
 	
 	public int size(){
