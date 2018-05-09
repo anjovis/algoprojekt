@@ -65,7 +65,7 @@ public class Hash {
 				if(word.compareTo(hashArray[i]) == 0){
 				
 					return i;
-				}
+				}ff
 			}
 		}
 		return -1;
