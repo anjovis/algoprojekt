@@ -2,48 +2,35 @@
 public class Hash {
 
 
-	private String[] hashArray;
+	private static String[][] hashArray;
     private int value;
      
 	
 	public Hash() {
-		hashArray =  new String[10];
+		hashArray =  new String[10007][];
 
 	}
 	
-	public static int hashCode(String o) {
+	public static int hashC(String o) {
 		
-		int half = o.length()/2;
-		int ascii =0;
-		int ascii2 =0;
-		String hashVal;
-
-		int result;
-		for(int i =0;i<half;i++) {
-			ascii = ascii + o.charAt(i);	
-		}
-		for(int i =half;i<o.length();i++) {
-			ascii2 = ascii2+o.charAt(i);	
-			
-		}
-		hashVal = Integer.toString(ascii)+Integer.toString(ascii2);
+		int a = o.hashCode();
+		int b = a % hashArray.length;
 		
-		result = Integer.parseInt(hashVal);
-		return result;
+		return b;
 		
 	}
 	
 	public static void main(String[] args) {
 		Hash hej = new Hash();
 		
-		System.out.println(hashCode("hej"));
-		System.out.println(hashCode("0"));
+		System.out.println(hashC("hej"));
+		System.out.println(hashC("0"));
 		
 		
 		
 		
 	}
-	//om arrayen är full dubblera, kalla på hashcode och lägg in på hascode (index) platsen .  
+	//om arrayen ï¿½r full dubblera, kalla pï¿½ hashcode och lï¿½gg in pï¿½ hascode (index) platsen .  
 	public void add(int value){
 
    
