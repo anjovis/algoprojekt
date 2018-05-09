@@ -56,7 +56,18 @@ public class Hash {
 		return false;		
 	}
 	
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+	public int totWords() {
+		int tot = 0;
+		
+		for(int i=0; )
+		
+		return tot;
+	}
+	
+>>>>>>> master
 	public int find(String word){
 		
 		for(int i=0;i<hashArray.length;i++) {

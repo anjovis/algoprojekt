@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Plagiat {
@@ -20,7 +21,7 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				hfil.add(ord,Hash.hashCode(ord));
+				hfil.add(ord,Hash.hashC(ord));
 			}
 
 		}
@@ -36,6 +37,9 @@ public class Plagiat {
 		int f1 = fil1.size();
 		int f2 = fil2.size();
 		int l = 0;
+		int tot = 0;
+		double procent;
+		
 		
 		if(f1 < f2) {
 			l = f1;
@@ -45,10 +49,22 @@ public class Plagiat {
 		}
 		for(int i=0; i<l; i++) {
 			
+			String ord = fil1.getWord(i);
+			int index = fil2.find(ord);
+			int antal1 = fil1.getInt(i);
+			int antal2 = fil2.getInt(index);
 			
+			if(antal1 > antal2) {
+				int lika = antal1-(antal1-antal2);
+				tot = tot + lika;
+			}
+			else {
+				int lika = antal2-(antal2-antal1);
+				tot = tot + lika;
+			}
 			
 		}
-		
+		return procent;
 	}
 	
 	
