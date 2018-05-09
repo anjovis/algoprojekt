@@ -56,14 +56,19 @@ public class Hash {
 		return false;		
 	}
 	
-	public static int find(String word){
-		if(word.compareTo(hashArray[hashC(word)]) == 0){
-			return hashC(word);
-		}
-		else{
-			return -1;
-		}
+	public int find(String word){
 		
+		for(int i=0;i<hashArray.length;i++) {
+			
+			if(hashArray[i] != null) {
+			
+				if(word.compareTo(hashArray[i]) == 0){
+				
+					return i;
+				}
+			}
+		}
+		return -1;
 	}
 	
 	public String getWord(int i){
@@ -85,10 +90,10 @@ public class Hash {
 		Hash hej = new Hash();	
 		
 		hej.add("hej",hashC("hej"));
-		hej.add("rebecka",10);
-		hej.add("ylv",10);
+		hej.add("rebecka",67);
+		hej.add("ylv",67);
 		hej.add("hej",hashC("hej"));
-		
+		System.out.println(hej.find("ylv"));
 		hej.print();
 	}
 }
