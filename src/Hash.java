@@ -2,7 +2,6 @@
 public class Hash {
 	
 	private String[] hashArray;
-	private String key;
     private int value;
      
 	
@@ -18,8 +17,8 @@ public class Hash {
 		return 4;
 		
 	}
-	//
-	public void add(String key, int value){
+	//om arrayen är full dubblera, kalla på hashcode och lägg in på hascode (index) platsen .  
+	public void add(int value){
 
    
 		
