@@ -45,6 +45,7 @@ public class Hash {
 			
 		}
 	}
+<<<<<<< HEAD
 	public boolean contains(String word){
 		for(int i = 0; i < hashArray.length-1; i++){
 			if(hashArray[i] == word){
@@ -63,6 +64,8 @@ public class Hash {
 		}
 		
 	}
+=======
+>>>>>>> master
 	
 	public int size(){
 	
@@ -78,7 +81,10 @@ public class Hash {
 		hej.add("hej",hashC("hej"));
 		
 		hej.print();
+<<<<<<< HEAD
 		
+=======
+>>>>>>> master
 
 
 	}
