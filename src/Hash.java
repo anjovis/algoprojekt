@@ -45,6 +45,24 @@ public class Hash {
 			
 		}
 	}
+	public boolean contains(String word){
+		for(int i = 0; i < hashArray.length-1; i++){
+			if(hashArray[i] == word){
+				return true;		
+			}
+		}
+		return false;		
+	}
+	
+	public static int find(String word){
+		if(word.compareTo(hashArray[hashC(word)]) == 0){
+			return hashC(word);
+		}
+		else{
+			return -1;
+		}
+		
+	}
 	
 	public int size(){
 	
@@ -60,6 +78,7 @@ public class Hash {
 		hej.add("hej",hashC("hej"));
 		
 		hej.print();
+		
 
 
 	}
