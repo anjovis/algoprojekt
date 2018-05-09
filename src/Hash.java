@@ -18,8 +18,8 @@ public class Hash {
 		
 	}
 	
-	public void add(String o,int value){
-		
+	public void add(String o){
+		int value = hashC(o);
 		for(int i=0;i<hashArray.length;i++) {
 			if(hashArray[value] == null) {
 				hashArray[value] = o;
@@ -66,7 +66,7 @@ public class Hash {
 				if(word.compareTo(hashArray[i]) == 0){
 				
 					return i;
-				}ff
+				}
 			}
 		}
 		return -1;
@@ -99,11 +99,11 @@ public class Hash {
 	public static void main(String[] args) {
 		Hash hej = new Hash();	
 		
-		hej.add("hej",hashC("hej"));
-		hej.add("rebecka",67);
-		hej.add("ylv",67);
-		hej.add("hej",hashC("hej"));
-		System.out.println(hej.find("ylv"));
+		hej.add("hej");
+		hej.add("rebecka");
+		hej.add("ylv");
+		hej.add("hej");
+		System.out.println(hej.find("hej"));
 		hej.print();
 	}
 }
