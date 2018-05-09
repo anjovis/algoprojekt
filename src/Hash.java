@@ -19,11 +19,51 @@ public class Hash {
 	}
 	
 	public void add(String o,int value){
-		String hej = hashArray[value];
-		if(o.compareTo(hashArray[value])==0) {
+		
+		for(int i=0;i<hashArray.length;i++) {
+			if(hashArray[value] == null) {
+				hashArray[value] = o;
+				hashArrInt[value] ++;
+				break;
+			}
+			else if(o.compareTo(hashArray[value])==0) {
+				hashArrInt[value] ++;
+				break;
+			}
+			else {
+				value = value+1;
+			}
+		}
+		
+
+	}
+	public void print() {
+		for(int i =0;i<hashArray.length;i++) {
+			if(hashArray[i] !=null) {
+				System.out.println(hashArray[i]+" "+hashArrInt[i]);
+				
+			}
 			
 		}
+	}
 
+	public boolean contains(String word){
+		for(int i = 0; i < hashArray.length-1; i++){
+			if(hashArray[i] == word){
+				return true;		
+			}
+		}
+		return false;		
+	}
+	
+	public static int find(String word){
+		if(word.compareTo(hashArray[hashC(word)]) == 0){
+			return hashC(word);
+		}
+		else{
+			return -1;
+		}
+		
 	}
 	
 	public String getWord(int i){
@@ -42,10 +82,13 @@ public class Hash {
 	}
 	
 	public static void main(String[] args) {
-		Hash hej = new Hash();		
-		System.out.println(hashC("hej"));
-		System.out.println(hashC("0"));
-
-
+		Hash hej = new Hash();	
+		
+		hej.add("hej",hashC("hej"));
+		hej.add("rebecka",10);
+		hej.add("ylv",10);
+		hej.add("hej",hashC("hej"));
+		
+		hej.print();
 	}
 }
