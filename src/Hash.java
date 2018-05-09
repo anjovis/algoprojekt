@@ -2,29 +2,17 @@
 public class Hash {
 
 
-<<<<<<< HEAD
-	private static String[] hashArray;
-	private static int[] hashArrInt;
-	
-	public Hash() {
-		hashArray =  new String[10007];
-		hashArrInt = new int[10007];
-=======
 	private static String[][] hashArray;
     private int value;
      
-	
 	public Hash() {
 		hashArray =  new String[10007][];
->>>>>>> master
 
 	}
 	
-	public static int hashC(String o) {
-		
+	public static int hashC(String o) {		
 		int a = o.hashCode();
-		int b = a % hashArray.length;
-		
+		int b = a % hashArray.length;		
 		return b;
 <<<<<<< HEAD
 		
@@ -50,8 +38,7 @@ public class Hash {
 	}
 	
 	public static void main(String[] args) {
-		Hash hej = new Hash();
-		
+		Hash hej = new Hash();		
 		System.out.println(hashC("hej"));
 		System.out.println(hashC("0"));
 <<<<<<< HEAD
@@ -62,16 +49,24 @@ public class Hash {
 
 	public int hashC(String o) {
 		
-		
+		hej.contains("hej");
 		
 		
 	}
-	//om arrayen �r full dubblera, kalla p� hashcode och l�gg in p� hascode (index) platsen .  
-	public void add(int value){
+
+	public void add(String word, int value){
+
+		
+	}
+	public boolean contains(String word){
 
    
->>>>>>> master
 		
+	}
+	
+	public int size(){
+	
+		return hashArray.length;
 	}
 	
 	
