@@ -48,7 +48,7 @@ public class Hash {
 	}
 
 	public boolean contains(String word){
-		for(int i = 0; i < hashArray.length-1; i++){
+		for(int i = 0; i < hashArray.length; i++){
 			if(hashArray[i] == word){
 				return true;		
 			}
@@ -56,6 +56,7 @@ public class Hash {
 		return false;		
 	}
 	
+<<<<<<< Updated upstream
 	public int find(String word){
 		
 		for(int i=0;i<hashArray.length;i++) {
@@ -69,7 +70,17 @@ public class Hash {
 			}
 		}
 		return -1;
+=======
+	public static int find(String word){
+		for(int i = 0; i < hashArray.length; i++){
+			if(word.compareTo(hashArray[i]) == 0){
+				return hashC(word);
+			}
+		}
+			return -1;
+>>>>>>> Stashed changes
 	}
+		
 	
 	public String getWord(int i){
 		String ord = hashArray[i];
@@ -81,8 +92,7 @@ public class Hash {
 		return in;
 	}
 	
-	public int size(){
-	
+	public int size(){	
 		return hashArray.length;
 	}
 	
