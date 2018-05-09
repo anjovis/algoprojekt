@@ -1,54 +1,47 @@
 
 public class Hash {
 
-
-<<<<<<< Updated upstream
 	private static String[][] hashArray;
     private int value;
-=======
-	private String[][] hashArray;
->>>>>>> Stashed changes
      
 	public Hash() {
-<<<<<<< Updated upstream
 		hashArray =  new String[10007][];
-=======
-		hashArray =  new String[10][];
-
->>>>>>> Stashed changes
-
 	}
 	
-	public static int hashC(String o) {
-		
+	public static int hashC(String o) {		
 		int a = o.hashCode();
-		int b = a % hashArray.length;
-		
+		int b = a % hashArray.length;		
 		return b;
 		
 	}
 	
 	public static void main(String[] args) {
-		Hash hej = new Hash();
-		
+		Hash hej = new Hash();		
 		System.out.println(hashC("hej"));
 		System.out.println(hashC("0"));
 		
-//		hej.add(hashCode("hej"));
-//		hej.add(hashCode("hej"));
-//		hej.add(hashCode("hej"));
-//		hej.add(hashCode("hej"));
+		hej.contains("hej");
 		
 		
 	}
-<<<<<<< Updated upstream
-	//om arrayen �r full dubblera, kalla p� hashcode och l�gg in p� hascode (index) platsen .  
-	public void add(int value){
-=======
-	 
-	public void add(String word, int value){
->>>>>>> Stashed changes
 
+	public void add(String word, int value){
+
+		
+	}
+	public boolean contains(String word){
+
+		for(int i = 0; i < hashArray.length-1; i++){
+			if(hashArray[i] == word){
+				return true;		
+			}
+		}
+		return false;
+	}
+	
+	
+	public static String find(String word){
+		return word;
 		
 	}
 	
@@ -56,6 +49,4 @@ public class Hash {
 		return hashArray.length;
 	}
 	
-	
-
 }
