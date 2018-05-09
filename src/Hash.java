@@ -67,13 +67,13 @@ public class Hash {
 	}
 	
 	public String getWord(int i){
-		String it = hashArray[i];
-		return it;
+		String ord = hashArray[i];
+		return ord;
 	}
 	
-	public int getIndex(int i){
-		int it = hashArrInt[i];
-		return it;
+	public int getInt(int i){
+		int in = hashArrInt[i];
+		return in;
 	}
 	
 	public int size(){
