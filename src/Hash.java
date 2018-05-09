@@ -18,11 +18,32 @@ public class Hash {
 	}
 	
 	public void add(String o,int value){
-		String hej = hashArray[value];
-		if(o.compareTo(hashArray[value])==0) {
+		
+		for(int i=0;i<hashArray.length;i++) {
+			if(hashArray[value] == null) {
+				hashArray[value] = o;
+				hashArrInt[value] ++;
+				break;
+			}
+			else if(o.compareTo(hashArray[value])==0) {
+				hashArrInt[value] ++;
+				break;
+			}
+			else {
+				value = value+1;
+			}
+		}
+		
+
+	}
+	public void print() {
+		for(int i =0;i<hashArray.length;i++) {
+			if(hashArray[i] !=null) {
+				System.out.println(hashArray[i]+" "+hashArrInt[i]);
+				
+			}
 			
 		}
-
 	}
 	
 	public int size(){
@@ -31,9 +52,14 @@ public class Hash {
 	}
 	
 	public static void main(String[] args) {
-		Hash hej = new Hash();		
-		System.out.println(hashC("hej"));
-		System.out.println(hashC("0"));
+		Hash hej = new Hash();	
+		
+		hej.add("hej",hashC("hej"));
+		hej.add("rebecka",10);
+		hej.add("ylv",10);
+		hej.add("hej",hashC("hej"));
+		
+		hej.print();
 
 
 	}
