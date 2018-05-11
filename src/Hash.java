@@ -13,7 +13,10 @@ public class Hash {
 	
 	public static int hashC(String o) {		
 		int a = o.hashCode();
-		int b = a % hashArray.length;		
+		int b = a % hashArray.length;
+		if(b<0) {
+			b=Math.abs(b);
+		}
 		return b;
 		
 	}
@@ -59,7 +62,7 @@ public class Hash {
 	public int totWords() {
 		int tot = 0;
 		
-		for(int i=0; )
+		//for(int i=0; )
 		
 		return tot;
 	}

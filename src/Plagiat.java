@@ -7,7 +7,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class Plagiat {
-
+	
+	
 
 	public static Hash readFile(String filnamn) {
 
@@ -21,7 +22,7 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				hfil.add(ord,Hash.hashC(ord));
+				hfil.add(ord);
 			}
 
 		}
@@ -29,8 +30,28 @@ public class Plagiat {
 			e.printStackTrace();
 		}
 		
+		
 
 	}
+	public static Hash readKeys() {
+		File file = new File("/Users/Rebecka/eclipse-workspace/algoprojekt/keys.txt");
+		Hash keyHash = new Hash();
+		String temp="";
+		try {
+			Scanner scan =new Scanner(file);
+			
+			while(scan.hasNext()) {
+				temp = scan.next();
+				keyHash.add(temp);
+			}
+			scan.close();
+		} 
+		catch (FileNotFoundException e) {
+			System.out.println("Filen kan inte hittas");
+		}
+		return keyHash;
+	}
+	
 	
 	public static double compareFile(Hash fil1, Hash fil2) {
 		
@@ -38,7 +59,7 @@ public class Plagiat {
 		int f2 = fil2.size();
 		int l = 0;
 		int tot = 0;
-		double procent;
+		double procent=0;
 		
 		
 		if(f1 < f2) {
@@ -71,12 +92,16 @@ public class Plagiat {
 	public static void main (String [] args) {
 		
 		
-		
 		Scanner scan=new Scanner( System.in);
 		System.out.println("Ange filens namn");
 		String fileName=scan.next();
 		scan.close();
 		readFile(fileName);
+		
+		Hash keys = new Hash();
+		keys = readKeys();
+		
+		
 		
 	}
 	
