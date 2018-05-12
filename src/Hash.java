@@ -5,10 +5,12 @@ public class Hash {
 
 	private static String[] hashArray;
     private static int[] hashArrInt;
+    private int size;
      
 	public Hash() {
 		hashArray =  new String[10007];
 		hashArrInt = new int[10007];
+		size = 0;
 	}
 	
 	public static int hashC(String o) {		
@@ -22,19 +24,23 @@ public class Hash {
 	}
 	
 	public void add(String o){
-		int value = hashC(o);
-		for(int i=0;i<hashArray.length;i++) {
-			if(hashArray[value] == null) {
-				hashArray[value] = o;
-				hashArrInt[value] ++;
-				break;
-			}
-			else if(o.compareTo(hashArray[value])==0) {
-				hashArrInt[value] ++;
-				break;
-			}
-			else {
-				value = value+1;
+		if(o != null){
+			int value = hashC(o);
+			for(int i=0;i<hashArray.length;i++) {
+				if(hashArray[value] == null) {
+					hashArray[value] = o;
+					hashArrInt[value] ++;
+					size++;
+					break;
+				}
+				else if(o.compareTo(hashArray[value])==0) {
+					hashArrInt[value] ++;
+					size++;
+					break;
+				}
+				else {
+					value = value+1;
+				}
 			}
 		}
 		
@@ -51,17 +57,19 @@ public class Hash {
 	}
 
 	public boolean contains(String word){
-		for(int i = 0; i < hashArray.length; i++){
-			if(hashArray[i] == word){
-				return true;		
-			}
+		if(word == null){
+			return false;
 		}
-		return false;		
+		else{
+			for(int i = 0; i < hashArray.length; i++){
+				if(hashArray[i] == word){
+					return true;		
+				}
+			}
+			return false;	
+		}
 	}
-	
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 	public int totWords() {
 		int tot = 0;
 		
@@ -70,7 +78,7 @@ public class Hash {
 		return tot;
 	}
 	
->>>>>>> master
+
 	public int find(String word){
 		
 		for(int i=0;i<hashArray.length;i++) {
@@ -84,17 +92,7 @@ public class Hash {
 			}
 		}
 		return -1;
-=======
-	public static int find(String word){
-		for(int i = 0; i < hashArray.length; i++){
-			if(word.compareTo(hashArray[i]) == 0){
-				return hashC(word);
-			}
-		}
-			return -1;
->>>>>>> Stashed changes
 	}
-		
 	
 	public String getWord(int i){
 		String ord = hashArray[i];
@@ -107,7 +105,7 @@ public class Hash {
 	}
 	
 	public int size(){	
-		return hashArray.length;
+		return size;
 	}
 	
 	public static void main(String[] args) {

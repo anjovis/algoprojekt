@@ -29,6 +29,7 @@ public class Plagiat {
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		return hfil;
 		
 		
 
