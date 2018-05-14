@@ -12,10 +12,10 @@ public class Plagiat {
 
 	public static Hash readFile(String filnamn) {
 
-		
+		Hash keys = readKeys();
 		File fil = new File(filnamn);
 		Hash hfil = new Hash();
-		Hash keys = readKeys();
+		
 		
 		try {
 
@@ -39,7 +39,7 @@ public class Plagiat {
 
 	}
 	public static Hash readKeys() {
-		File file = new File("/Users/Rebecka/eclipse-workspace/algoprojekt/keys.txt");
+		File file = new File("keys.txt");
 		
 		Hash keyHash = new Hash();
 		String temp="";
@@ -98,15 +98,16 @@ public class Plagiat {
 	
 	public static void main (String [] args) {
 		
-		
+		/*
 		Scanner scan=new Scanner( System.in);
 		System.out.println("Ange filens namn");
 		String fileName=scan.next();
 		scan.close();
-		readFile(fileName);
+		readFile(fileName);*/
 		
 		Hash keys = new Hash();
 		keys = readKeys();
+		keys.print();
 		
 		
 		
