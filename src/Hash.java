@@ -73,7 +73,11 @@ public class Hash {
 	public int totWords() {
 		int tot = 0;
 		
-		//for(int i=0; )
+		for(int i=0;i<hashArrInt.length; i++) {
+			if(hashArrInt[i] != 0) {
+				tot = tot + hashArrInt[i];
+			}
+		}
 		
 		return tot;
 	}
