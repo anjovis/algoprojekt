@@ -36,6 +36,7 @@ public class Plagiat {
 	}
 	public static Hash readKeys() {
 		File file = new File("/Users/Rebecka/eclipse-workspace/algoprojekt/keys.txt");
+		
 		Hash keyHash = new Hash();
 		String temp="";
 		try {
@@ -59,8 +60,9 @@ public class Plagiat {
 		int f1 = fil1.size();
 		int f2 = fil2.size();
 		int l = 0;
-		int tot = 0;
+		int totLika = 0;
 		double procent=0;
+		int tot = fil1.totWords() + fil2.totWords();
 		
 		
 		if(f1 < f2) {
@@ -78,14 +80,14 @@ public class Plagiat {
 			
 			if(antal1 > antal2) {
 				int lika = antal1-(antal1-antal2);
-				tot = tot + lika;
+				totLika = totLika + lika;
 			}
 			else {
 				int lika = antal2-(antal2-antal1);
-				tot = tot + lika;
+				totLika = totLika + lika;
 			}
-			
 		}
+		procent = totLika/tot;
 		return procent;
 	}
 	
