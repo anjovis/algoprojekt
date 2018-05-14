@@ -8,13 +8,14 @@ import java.util.Scanner;
 
 public class Plagiat {
 	
-	
+	public static int counter;
 
 	public static Hash readFile(String filnamn) {
 
 		
 		File fil = new File(filnamn);
 		Hash hfil = new Hash();
+		Hash keys = readKeys();
 		
 		try {
 
@@ -22,9 +23,12 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				hfil.add(ord);
+				if(!keys.contains(ord)) {
+					hfil.add(ord);
+				}
+				counter++;
 			}
-
+			sc.close();
 		}
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -62,7 +66,7 @@ public class Plagiat {
 		int l = 0;
 		int totLika = 0;
 		double procent=0;
-		int tot = fil1.totWords() + fil2.totWords();
+		int tot = counter;
 		
 		
 		if(f1 < f2) {
