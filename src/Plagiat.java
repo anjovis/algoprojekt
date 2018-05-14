@@ -18,6 +18,7 @@ public class Plagiat {
 		//keys.print();
 		File fil = new File(filnamn);
 		Hash hfil = new Hash();
+		hfil.add("anja");
 		keys.print();
 		
 		try {
@@ -114,10 +115,11 @@ public class Plagiat {
 		
 		Hash keys = new Hash();
 		keys = readKeys();
-		keys.print();
+		//keys.print();
 		File fil = new File("test3.txt");
 		Hash hfil = new Hash();
-		//keys.print();
+		hfil.add("anja");
+		keys.print();
 		
 	}
 	
