@@ -8,7 +8,6 @@ public class PlagiatTest {
 	   
 		@Test
 		public void KeysTest(){
-			test.hashC("Hej");
 			assertEquals("Check that the code is the same", 3111, test.hashC("hej"));			
 		}
 		
