@@ -3,8 +3,8 @@ import java.util.Iterator;
 public class Hash {
 
 
-	private static String[] hashArray;
-    private static int[] hashArrInt;
+	private String[] hashArray;
+    private int[] hashArrInt;
     private int size;
      
 	public Hash() {
@@ -13,7 +13,7 @@ public class Hash {
 		size = 0;
 	}
 	
-	public static int hashC(String o) {		
+	public int hashC(String o) {		
 		int a = o.hashCode();
 		int b = a % hashArray.length;
 		if(b<0) {

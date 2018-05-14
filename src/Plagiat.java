@@ -15,11 +15,11 @@ public class Plagiat {
 
 		Hash keys = new Hash();
 		keys = readKeys();
-		//keys.print();
+		keys.print();
 		File fil = new File(filnamn);
 		Hash hfil = new Hash();
-		hfil.add("anja");
-		keys.print();
+		//hfil.add("anja");
+		//keys.print();
 		
 		try {
 
