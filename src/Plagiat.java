@@ -9,13 +9,16 @@ import java.util.Scanner;
 public class Plagiat {
 	
 	public static int counter;
+	
 
 	public static Hash readFile(String filnamn) {
 
-		Hash keys = readKeys();
+		Hash keys = new Hash();
+		keys = readKeys();
+		//keys.print();
 		File fil = new File(filnamn);
 		Hash hfil = new Hash();
-		
+		keys.print();
 		
 		try {
 
@@ -23,7 +26,7 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				if(keys.contains(ord) == false) {
+				if(keys.find(ord) == -1) {
 					hfil.add(ord);
 				}
 				counter++;
@@ -105,11 +108,16 @@ public class Plagiat {
 		scan.close();
 		readFile(fileName);*/
 		
+		//Hash keys = new Hash();
+		//keys = readFile("test3.txt");
+		//keys.print();
+		
 		Hash keys = new Hash();
 		keys = readKeys();
 		keys.print();
-		
-		
+		File fil = new File("test3.txt");
+		Hash hfil = new Hash();
+		//keys.print();
 		
 	}
 	
