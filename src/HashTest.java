@@ -1,16 +1,10 @@
 import static org.junit.Assert.*;
-	import java.util.Iterator;
 	import org.junit.Before;
 	import org.junit.Test;
 
 	public class HashTest {
 		Hash test = new Hash();
 		 
-	   @Before 
-	   public void setUp() {
-			
-	   }	
-	   
 		@Test
 		public void CodeTest(){
 			test.hashC("Hej");
