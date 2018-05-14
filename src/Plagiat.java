@@ -23,7 +23,7 @@ public class Plagiat {
 			
 			while(sc.hasNext()) {
 				String ord = sc.next();
-				if(!keys.contains(ord)) {
+				if(keys.contains(ord) == false) {
 					hfil.add(ord);
 				}
 				counter++;
