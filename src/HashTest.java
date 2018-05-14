@@ -7,13 +7,13 @@ import static org.junit.Assert.*;
 		 
 		@Test
 		public void CodeTest(){
-			test.hashC("Hej");
 			assertEquals("Check that the code is the same", 3111, test.hashC("hej"));			
 		}
 		
 		@Test
 		public void findTest(){
 			test.add("Hej");
+			
 			
 		}
 		
@@ -45,10 +45,6 @@ import static org.junit.Assert.*;
 			assertEquals("Check that the frequence is 1", "hej", test.getWord(3111));
 			
 		}
-		@Test
-		public void printTest(){
-			
-		}
-	}
+}
 
 
