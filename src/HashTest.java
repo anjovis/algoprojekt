@@ -1,6 +1,5 @@
 import static org.junit.Assert.*;
-	import org.junit.Before;
-	import org.junit.Test;
+import org.junit.Test;
 
 	public class HashTest {
 		Hash test = new Hash();
@@ -12,15 +11,17 @@ import static org.junit.Assert.*;
 		
 		@Test
 		public void findTest(){
-			test.add("Hej");
+			test.add("hej");
 			
-			
-		}
+			assertEquals("Check that the word dosent exist", -1, test.find("Moa"));	
+			assertEquals("Check that the word exist", 3111, test.find("hej"));	
+			assertEquals("Check that we dont find anything when we search for nothing", -1, test.find(""));
+		}		
 		
 		@Test
 		public void containsAddTest(){
 			test.add("Hej");
-			
+		
 			assertEquals("Test contains() with existing object", true, test.contains("Hej"));
 			assertEquals("Test contains() with non existing object", false, test.contains("Moa"));
 			assertEquals("Test contains() with null object", false, test.contains(null));		
@@ -30,6 +31,7 @@ import static org.junit.Assert.*;
 		public void sizeTest(){
 			test.add("Hej");
 			test.add("Hello");
+			test.add("Hej");		
 			assertEquals("Check that new list has size 2", 2, test.size());
 		}
 		@Test
@@ -37,12 +39,14 @@ import static org.junit.Assert.*;
 			test.add("hej");
 			test.add("hej");			
 			assertEquals("Check that the frequence is 2", 2, test.getInt(3111));
-			assertEquals("Check that the frequence is 0", 0, test.getInt(3112));			
+			assertEquals("Check that the frequence is 0", 0, test.getInt(3112));
+			assertEquals("Check that the int doesnt exist", -1, test.getInt(-2));
 		}
 		@Test
 		public void getWordTest(){
 			test.add("hej");		
-			assertEquals("Check that the frequence is 1", "hej", test.getWord(3111));
+			assertEquals("Check that the code in string is hej", "hej", test.getWord(3111));
+			assertEquals("Check that the code in string is hej", null , test.getWord(-2));
 			
 		}
 }

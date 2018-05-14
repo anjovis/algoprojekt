@@ -35,7 +35,6 @@ public class Hash {
 				}
 				else if(o.compareTo(hashArray[value])==0) {
 					hashArrInt[value] ++;
-					size++;
 					break;
 				}
 				else {
@@ -84,7 +83,9 @@ public class Hash {
 	*/
 
 	public int find(String word){
-		
+		if(word == null){
+			return -1;
+		}		
 		for(int i=0;i<hashArray.length;i++) {
 			
 			if(hashArray[i] != null) {
@@ -99,11 +100,17 @@ public class Hash {
 	}
 	
 	public String getWord(int i){
+		if(i < 0){
+			return null;
+		}
 		String ord = hashArray[i];
 		return ord;
 	}
 	
 	public int getInt(int i){
+		if(i < 0){
+			return -1;
+		}
 		int in = hashArrInt[i];
 		return in;
 	}
