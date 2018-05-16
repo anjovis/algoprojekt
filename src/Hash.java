@@ -55,33 +55,6 @@ public class Hash {
 		}
 	}
 
-	public boolean contains(String word){
-		if(word == null){
-			return false;
-		}
-		else{
-			for(int i = 0; i < hashArray.length; i++){
-				if(hashArray[i] == word){
-					return true;		
-				}
-			}
-			return false;	
-		}
-	}
-
-	public int totWords() {
-		int tot = 0;
-		
-		for(int i=0;i<hashArrInt.length; i++) {
-			if(hashArrInt[i] != 0) {
-				tot = tot + hashArrInt[i];
-			}
-		}
-		
-		return tot;
-	}
-	
-
 	public int find(String word){
 		if(word == null){
 			return -1;

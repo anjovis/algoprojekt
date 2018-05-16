@@ -71,56 +71,45 @@ public class Plagiat {
 
 	}
 	
-	public static int compareFile(Hash fil1, Hash fil2) {
+	public static double compareFile(Hash fil1, Hash fil2) {
 		
-		int f1 = fil1.size();
-		int f2 = fil2.size();
-		int l = 0;
-		int totLika = 0;
+		double totLika = 0;
 		double procent=0;
-		int tot = counter;
+		double tot = counter;
 		
-		
-		if(f1 < f2) {
-			l = f1;
-		}
-		else {
-			l = f2;
-		}
-		for(int i=0; i<l; i++) {
+		for(int i=0; i<10007; i++) {
 			
 			String ord = fil1.getWord(i);
 			int index = fil2.find(ord);
 			int antal1 = fil1.getInt(i);
 			int antal2 = fil2.getInt(index);
-			System.out.println(antal1);
-			if(antal1 > antal2) {
-				int lika = (antal1-(antal1-antal2))*2;
-				totLika = totLika + lika;
-			}
-			else if(antal1 == antal2) {
-				totLika = totLika + antal1 + antal2;
-			}
-			else {
-				int lika = (antal2-(antal2-antal1))*2;
-				totLika = totLika + lika;
+			
+			if(antal1 != 0 && antal2 != 0 && ord != null && index != -1) {
+				if(antal1 > antal2) {
+					int lika = (antal1-(antal1-antal2))*2;
+					totLika = totLika + lika;
+				}
+				else if(antal1 == antal2) {
+					totLika = totLika + antal1 + antal2;
+					
+					
+				}
+				else {
+					int lika = (antal2-(antal2-antal1))*2;
+					totLika = totLika + lika;
+				}
 			}
 		}
-		procent = totLika/tot;
-		return totLika;
+		procent = (totLika/tot)*100;
+		return procent;
 	}
 	
 	
 	public static void main (String [] args) {
 		
-		Hash klar = arrToHash(splitString(readFile("ArrayStack.java")));
-		Hash klar2 = arrToHash(splitString(readFile("ArrayQueue.java")));
-		//klar2.print();
-		
+		Hash klar = arrToHash(splitString(readFile("ArrayQueue.java")));
+		Hash klar2 = arrToHash(splitString(readFile("ArrayStack.java")));
 		System.out.println(compareFile(klar,klar2));
-		//System.out.println(counter);
-		//System.out.println(klar.totWords());
-		//System.out.println(klar2.totWords());
 		
 	}
 	
