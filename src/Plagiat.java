@@ -106,11 +106,11 @@ public class Plagiat {
 	
 	
 	public static void main (String [] args) {
-		
+
 		Hash klar = arrToHash(splitString(readFile("ArrayQueue.java")));
 		Hash klar2 = arrToHash(splitString(readFile("ArrayStack.java")));
 		System.out.println(compareFile(klar,klar2));
-		
+
 	}
 	
 	
