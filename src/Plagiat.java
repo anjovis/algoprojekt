@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -11,36 +12,29 @@ public class Plagiat {
 	public static int counter;
 	
 
-	public static Hash readFile(String filnamn) {
-
-		Hash keys = new Hash();
-		keys = readKeys();
-		File fil = new File(filnamn);
-		Hash hfil = new Hash();
-		//hfil.add("anja");
-		//keys.print();
+	public static String readFile(String filnamn) {
 		
+		String line ="";
 		try {
-
-			Scanner sc = new Scanner(fil);
-			
-			while(sc.hasNext()) {
-				String ord = sc.next();
-				if(keys.find(ord) == -1) {
-					hfil.add(ord);
-				}
-				counter++;
+			FileReader fil = new FileReader(filnamn);
+			BufferedReader reader = new BufferedReader(fil);
+		
+			while(reader.ready()) {
+				line = line + reader.readLine();
+				//if(keys.find(ord) == -1) {
+				//	hfil.add(ord);
+				//}
+				//counter++;
 			}
-			sc.close();
+			reader.close();
 		}
-		catch(FileNotFoundException e) {
-			e.printStackTrace();
+		catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 		}
-		return hfil;
-		
-		
-
+		return line;
 	}
+		
 	public static Hash readKeys() {
 		File file = new File("keys.txt");
 		
@@ -107,12 +101,14 @@ public class Plagiat {
 		String fileName=scan.next();
 		scan.close();
 		readFile(fileName);*/
-		
+		/*
 		Hash keys = new Hash();
 		keys = readFile("test3.txt");
-		keys.print();
+		keys.print();*/
 		
+		System.out.println(readFile("ArrayStack.java"));
 		
+		//"//W+"
 		
 	}
 	
