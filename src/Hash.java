@@ -69,7 +69,7 @@ public class Hash {
 		}
 	}
 
-	/*public int totWords() {
+	public int totWords() {
 		int tot = 0;
 		
 		for(int i=0;i<hashArrInt.length; i++) {
@@ -80,7 +80,7 @@ public class Hash {
 		
 		return tot;
 	}
-	*/
+	
 
 	public int find(String word){
 		if(word == null){

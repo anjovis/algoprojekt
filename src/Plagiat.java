@@ -21,10 +21,7 @@ public class Plagiat {
 		
 			while(reader.ready()) {
 				line = line + reader.readLine();
-				//if(keys.find(ord) == -1) {
-				//	hfil.add(ord);
-				//}
-				//counter++;
+				
 			}
 			reader.close();
 		}
@@ -55,8 +52,26 @@ public class Plagiat {
 		return keyHash;
 	}
 	
+	public static String[] splitString(String line) {
+		String[] strArr = line.split("\\W+");
+		counter = counter+ strArr.length;
+		return strArr;
+	}
 	
-	public static double compareFile(Hash fil1, Hash fil2) {
+	public static Hash arrToHash(String [] words) {
+		Hash keys = readKeys();
+		Hash hfil = new Hash();
+		
+		for (int i =0;i<words.length;i++) {
+			if(keys.find(words[i]) == -1) {
+				hfil.add(words[i]);
+			}
+		}
+		return hfil;
+
+	}
+	
+	public static int compareFile(Hash fil1, Hash fil2) {
 		
 		int f1 = fil1.size();
 		int f2 = fil2.size();
@@ -78,37 +93,34 @@ public class Plagiat {
 			int index = fil2.find(ord);
 			int antal1 = fil1.getInt(i);
 			int antal2 = fil2.getInt(index);
-			
+			System.out.println(antal1);
 			if(antal1 > antal2) {
-				int lika = antal1-(antal1-antal2);
+				int lika = (antal1-(antal1-antal2))*2;
 				totLika = totLika + lika;
 			}
+			else if(antal1 == antal2) {
+				totLika = totLika + antal1 + antal2;
+			}
 			else {
-				int lika = antal2-(antal2-antal1);
+				int lika = (antal2-(antal2-antal1))*2;
 				totLika = totLika + lika;
 			}
 		}
 		procent = totLika/tot;
-		return procent;
+		return totLika;
 	}
 	
 	
 	public static void main (String [] args) {
 		
-		/*
-		Scanner scan=new Scanner( System.in);
-		System.out.println("Ange filens namn");
-		String fileName=scan.next();
-		scan.close();
-		readFile(fileName);*/
-		/*
-		Hash keys = new Hash();
-		keys = readFile("test3.txt");
-		keys.print();*/
+		Hash klar = arrToHash(splitString(readFile("ArrayStack.java")));
+		Hash klar2 = arrToHash(splitString(readFile("ArrayQueue.java")));
+		//klar2.print();
 		
-		System.out.println(readFile("ArrayStack.java"));
-		
-		//"//W+"
+		System.out.println(compareFile(klar,klar2));
+		//System.out.println(counter);
+		//System.out.println(klar.totWords());
+		//System.out.println(klar2.totWords());
 		
 	}
 	
