@@ -94,12 +94,14 @@ public class Hash {
 	
 	public static void main(String[] args) {
 		Hash hej = new Hash();	
-		
+		Hash bla = new Hash();
+	
 		hej.add("hej");
 		hej.add("rebecka");
 		hej.add("ylv");
 		hej.add("hej");
-		System.out.println(hej.find("hej"));
-		hej.print();
+		//System.out.println(hej.find("hej"));
+		//hej.print();
+		
 	}
 }
