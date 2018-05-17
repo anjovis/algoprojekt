@@ -107,7 +107,7 @@ public class Plagiat {
 
 		Hash klar = arrToHash(splitString(readFile("ArrayQueue.java")));
 		Hash klar2 = arrToHash(splitString(readFile("ArrayStack.java")));
-		System.out.println(compareFile(klar,klar2));
+		System.out.println(Math.floor(compareFile(klar,klar2))+" % är plagierat");
 
 	}
 	

@@ -11,7 +11,10 @@ public class PlagiatTest {
 		test.add("Rebecka");
 		test2.add("Rebecka");
 		
-		assertEquals("sddcsd",100, compareFile(test,test2));
+		
+		assertEquals("sddcsd",100.0, compareFile(test,test2));
 	}
+	
+	
 
 }
