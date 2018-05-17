@@ -23,8 +23,8 @@ public class PlagiatTest extends Plagiat{
 		test3.add("Anja");
 		test3.add("Spens");
 		
-		assertEquals("dvdfddffdv",100.0, 0.0,compareFile(test,test2));
-		assertEquals("sddssd",75.0,0.0,compareFile(test,test3));
+		assertEquals("Test if compare returns 100% when two hash is equal",100.0, 0.0,compareFile(test,test2));
+		assertEquals("Test if compare returns 75% when two hash has 2/3 equal",75.0,0.0,compareFile(test,test3));
 	}
 
 }
